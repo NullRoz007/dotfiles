@@ -42,9 +42,13 @@
 
 #custom-tailscale {
   min-width: 12px;
-  margin: 0px 9px;
+  margin-right: 16px;
 }
 
+#custom-hyprsunset {
+  font-size: 14px;
+  margin-right: 16px;
+}
 
 #tray {
   margin-right: 16px;
@@ -59,7 +63,7 @@
 }
 
 #custom-expand-icon {
-  margin-right: 18px;
+  margin-right: 16px;
 }
 
 tooltip {

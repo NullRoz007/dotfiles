@@ -134,7 +134,7 @@
       "transition-duration": 600,
       "children-class": "tray-group-item"
     },
-    "modules": ["custom/expand-icon", "custom/tailscale"]
+    "modules": ["custom/expand-icon", "custom/tailscale", "custom/hyprsunset"]
   },
   "custom/expand-icon": {
     "format": "",
@@ -168,24 +168,23 @@
     "on-click": "exec ~/.config/waybar/waybar-tailscale/waybar-tailscale.sh --toggle",
     "on-click-right": "exec ~/.config/waybar/waybar-tailscale/waybar-tailscale.sh --select-exit-node",
     "exec-on-event": true,
-    "format": "ts: {icon}",
+    "format": "{icon}",
     "format-icons": {
-        "connected": "on",
-        "stopped": "off"
+        "connected": "󰒍",
+        "stopped": "󰒎"
     },
     "tooltip": true,
     "return-type": "json",
     "interval": 3
   },
   "custom/hyprsunset": {
-    "on-click": "exec hypersunset",
-    "on-click-right": "pkill hyprsunset",
-    "format": "test",
-    "format-icons": {
-      "0": "on",
-      "1": "off"
-    }
-  },
+    "exec": "~/.config/waybar/waybar-hyprsunset/hyprsunset.sh",
+    "on-click": "~/.config/waybar/waybar-hyprsunset/hyprsunset.sh toggle",
+    "format": "{}",
+    "signal": 10,
+    "return-type": "",
+    "tooltip": false
+},
   "custom/idle-indicator": {
     "on-click": "omarchy-toggle-idle",
     "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
