@@ -134,7 +134,7 @@
       "transition-duration": 600,
       "children-class": "tray-group-item"
     },
-    "modules": ["custom/expand-icon", "custom/tailscale", "custom/hyprsunset"]
+    "modules": ["custom/expand-icon", "custom/playerctl", "custom/tailscale", "custom/hyprsunset"]
   },
   "custom/expand-icon": {
     "format": "",
@@ -184,7 +184,18 @@
     "signal": 10,
     "return-type": "",
     "tooltip": false
-},
+  },
+  "custom/playerctl": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/waybar-playerctl/playerctl.sh status",
+    "interval": 1,
+
+    "on-click": "~/.config/waybar/waybar-playerctl/playerctl.sh toggle",
+    "on-click-right": "~/.config/waybar/waybar-playerctl/playerctl.sh menu",
+    "on-scroll-up": "~/.config/waybar/waybar-playerctl/playerctl.sh next",
+    "on-scroll-down": "~/.config/waybar/waybar-playerctl/playerctl.sh prev"
+  }, 
   "custom/idle-indicator": {
     "on-click": "omarchy-toggle-idle",
     "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
